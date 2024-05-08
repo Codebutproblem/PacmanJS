@@ -94,10 +94,11 @@ function astarSearch(grid, src, dest) {
                 // Tính toán giá trị g, h, f cho nút mới
                 newNode.g = currentNode.g + 1;
                 newNode.h = Math.abs(newX - dest.x) + Math.abs(newY - dest.y);
+                console.log(newNode.h);
                 newNode.calculateF();
 
                 // Nếu nút chưa được duyệt hoặc có chi phí tốt hơn
-                if (!openList.contains(newNode) || newNode.g < openList.get(newNode)) {
+                if (!openList.contains(newNode) || newNode.f < openList.get(newNode)) {
                     openList.enqueue(newNode, newNode.f);
                 }
             }
