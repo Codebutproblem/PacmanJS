@@ -98,7 +98,7 @@ function astarSearch(grid, src, dest) {
                 newNode.calculateF();
 
                 // Nếu nút chưa được duyệt hoặc có chi phí tốt hơn
-                if (!openList.contains(newNode) || newNode.f < openList.get(newNode)) {
+                if (!openList.contains(newNode) || newNode.g < openList.get(newNode)) {
                     openList.enqueue(newNode, newNode.f);
                 }
             }
